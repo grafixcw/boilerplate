@@ -11,7 +11,11 @@ module.exports = {
   },
   scripts: {
     copy: "node_modules/jquery/dist/jquery.min.js",
-    input: ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "src/scripts/app.js"],
+    input: [
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "src/vendor/bootnavbar/js/bootnavbar.js",
+      "src/scripts/app.js"
+    ],
     output: "dist/js",
     watch: "src/scripts/**/*.js"
   },

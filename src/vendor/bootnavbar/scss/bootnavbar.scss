@@ -1,0 +1,27 @@
+.dropdown-menu {
+  margin-top: 0;
+
+  .dropdown-toggle:after {
+    border-left: 4px solid;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    vertical-align: middle;
+  }
+  .dropdown .dropdown-menu {
+    border-width: 0;
+    margin: 0 20px;
+    left: 100%;
+    top: 0;
+
+    &.left {
+      left: auto;
+      right: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    .dropdown .dropdown-menu {
+      border-width: 1px;
+      margin: 0;
+    }
+  }
+}

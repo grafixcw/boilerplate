@@ -1,0 +1,119 @@
+// Mixins
+// -----------------------------------------------------------------------------
+
+// Font Face
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_"),
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype",
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+// Media Queries
+@mixin breakpoint($type, $breakpoint, $orientation: null) {
+  @if $type == max {
+    @if $orientation != null {
+      @media screen and (max-width: $breakpoint - 1px) and (orientation: $orientation) {
+        @content;
+      }
+    } @else {
+      @media screen and (max-width: $breakpoint - 1px) {
+        @content;
+      }
+    }
+  } @else {
+    @if $orientation != null {
+      @media screen and (min-width: $breakpoint) and (orientation: $orientation) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+// Media Breakpoint Minimum
+@mixin from($breakpoint) {
+  @include breakpoint(min, $breakpoint) {
+    @content;
+  }
+}
+
+// Media Breakpoint Maximum
+@mixin until($breakpoint) {
+  @include breakpoint(max, $breakpoint) {
+    @content;
+  }
+}
+
+// Media Breakpoint Only
+@mixin only($max, $min) {
+  @media screen and (max-width: $max - 1px) and (min-width: $min) {
+    @content;
+  }
+}
+
+// Portrait Mode
+@mixin portrait($breakpoint) {
+  @include breakpoint(min, $breakpoint, portrait) {
+    @content;
+  }
+}
+
+// Portrait Mode (Max)
+@mixin portrait-max($breakpoint) {
+  @include breakpoint(max, $breakpoint, portrait) {
+    @content;
+  }
+}
+
+// Landscape Mode
+@mixin landscape($breakpoint) {
+  @include breakpoint(min, $breakpoint, landscape) {
+    @content;
+  }
+}
+
+// Landscape Mode (Max)
+@mixin landscape-max($breakpoint) {
+  @include breakpoint(max, $breakpoint, landscape) {
+    @content;
+  }
+}
+
+// Word Wrapping Mixin
+@mixin word-wrap($lines-to-show: 2, $font-size: $font-size-base, $line-height: $line-height-base) {
+  display: block;
+  display: -webkit-box;
+  font-size: #{$font-size};
+  height: calc(#{$font-size} * #{$line-height} * #{$lines-to-show});
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines-to-show;
+  line-height: #{$line-height};
+  overflow: hidden;
+  padding: 0 !important;
+  position: relative;
+  text-overflow: ellipsis;
+}

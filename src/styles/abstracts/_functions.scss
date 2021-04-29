@@ -1,0 +1,73 @@
+// Functions
+// -----------------------------------------------------------------------------
+
+// String Replace
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Strips unit suffix from value
+@function _strip-unit($num) {
+  @if type-of($num) != "number" {
+    @warn "num: #{$num} is not a number";
+    @return null;
+  }
+
+  @return $num / ($num * 0 + 1);
+}
+
+// Converts to rem, utility for rem-calc
+@function _convert-to-rem($value, $base-value: 16px) {
+  @if type-of($value) != "number" {
+    @warn "value: #{$value} is not a number";
+    @return null;
+  }
+
+  @if type-of($base-value) != "number" {
+    @warn "base-value: #{$base-value} is not a number";
+    @return null;
+  }
+
+  $value: _strip-unit($value) / _strip-unit($base-value) * 1rem;
+
+  // Turn 0rem into 0
+  @if (_strip-unit($value) == 0) {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+// Calculates rem value from number
+@function rem-calc($values, $base-value: 16px) {
+  @if type-of($values) != "number" {
+    @warn "values: #{$values} is not a number";
+    @return null;
+  }
+
+  @if type-of($base-value) != "number" {
+    @warn "base-value: #{$base-value} is not a number";
+    @return null;
+  }
+
+  $max: length($values);
+
+  @if $max == 1 {
+    @return _convert-to-rem(nth($values, 1), $base-value);
+  }
+
+  $remValues: ();
+
+  @for $i from 1 through $max {
+    $remValues: append($remValues, _convert-to-rem(nth($values, $i), $base-value));
+  }
+
+  @return $remValues;
+}

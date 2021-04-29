@@ -23,6 +23,7 @@ module.exports = {
       "src/vendor/owl-carousel/owl-carousel-init.js",
       "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
       "src/vendor/fancybox/fancybox-init.js",
+      "src/vendor/helpers/js/back-to-top.js",
       "src/scripts/app.js"
     ],
     output: "dist/js",
@@ -38,7 +39,7 @@ module.exports = {
   styles: {
     input: "src/styles/*.scss",
     output: "dist/css",
-    watch: "src/styles/**/*.scss"
+    watch: ["src/styles/**/*.scss", "src/vendor/**/*.scss"]
   },
   templates: {
     input: "src/templates/*.twig",

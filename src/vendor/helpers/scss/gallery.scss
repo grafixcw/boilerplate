@@ -1,0 +1,178 @@
+// Gallery
+// -----------------------------------------------------------------------------
+
+// Variables
+$gallery: (
+  default: 1 2 3 4 3 3 4 4 3 4 4 4,
+  mobile: 1 2 3 4 3 3 4 4 3 4 4 6,
+  tablet: 1 2 3 4 5 6 7 4 5 5 6 6,
+  desktop: 1 2 3 4 5 6 7 8 9 10 11 12,
+) !default;
+$gallery_hover_color: $primary !default;
+$gallery_hover_opacity: 0.55 !default;
+
+// Main Styles
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none !important;
+  margin: 0 -0.75rem -1.5rem !important;
+  padding-left: 0;
+
+  > li {
+    margin-bottom: 1.5rem;
+    min-height: 1px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    position: relative;
+    width: 100%;
+
+    + li {
+      margin-top: 0 !important;
+    }
+    > a {
+      border-radius: 1.125rem;
+      display: block;
+      height: 0;
+      overflow: hidden;
+      padding: 0 0 100%;
+      position: relative;
+
+      > img {
+        border: 0;
+        object-fit: cover;
+        object-position: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+      &:before,
+      &:after {
+        opacity: 0;
+        position: absolute;
+        transition: opacity 0.3s ease;
+      }
+      &:before {
+        color: $white;
+        content: "\f62c";
+        font-family: "bootstrap-icons";
+        font-size: 1.875rem;
+        line-height: 1;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        white-space: pre;
+        z-index: 1;
+      }
+      &:after {
+        background-color: $gallery_hover_color;
+        content: "";
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+        &:after {
+          opacity: $gallery_hover_opacity;
+        }
+      }
+    }
+  }
+}
+
+// Sizes
+@each $media, $size in $gallery {
+  @if $media == default {
+    @for $i from 1 through length($size) {
+      $width: percentage(100 / nth($size, $i) / 100);
+
+      .gallery-col-#{$i} > li {
+        flex: 0 0 $width;
+        max-width: $width;
+      }
+    }
+  } @else if $media == mobile {
+    @include from($mobile) {
+      @for $i from 1 through length($size) {
+        $width: percentage(100 / nth($size, $i) / 100);
+
+        .gallery-col-#{$i} > li {
+          flex: 0 0 $width;
+          max-width: $width;
+        }
+      }
+    }
+  } @else if $media == tablet {
+    @include from($tablet) {
+      @for $i from 1 through length($size) {
+        $width: percentage(100 / nth($size, $i) / 100);
+
+        .gallery-col-#{$i} > li {
+          flex: 0 0 $width;
+          max-width: $width;
+        }
+      }
+    }
+  } @else if $media == desktop {
+    @include from($desktop) {
+      @for $i from 1 through length($size) {
+        $width: percentage(100 / nth($size, $i) / 100);
+
+        .gallery-col-#{$i} > li {
+          flex: 0 0 $width;
+          max-width: $width;
+        }
+      }
+    }
+  }
+}
+
+// Layouts
+.gallery-vertical {
+  > li > a {
+    padding-bottom: 124%;
+  }
+
+  // Responsive Styles
+  @include from($desktop) {
+    > li {
+      margin-bottom: 30px;
+
+      > a {
+        background-color: #f1f0f0;
+        border: 5px solid #eaeaea;
+        box-shadow: 0 0 5px 0 rgba($dark, 0.15) inset, 0 3px 10px 3px rgba($dark, 0.15);
+
+        &:before {
+          height: 80px;
+        }
+        &:after {
+          background-color: $secondary;
+          bottom: 30px;
+          left: 24px;
+          right: 24px;
+          top: 30px;
+        }
+        > img {
+          border: 1px solid #e7e6e6;
+          bottom: 30px;
+          left: 24px;
+          top: 30px;
+          height: calc(100% - 60px);
+          width: calc(100% - 48px);
+        }
+        &:hover {
+          box-shadow: 0 0 15px 3px rgba($dark, 0.15) inset, 0 5px 10px 5px rgba($dark, 0.15);
+        }
+      }
+    }
+  }
+}

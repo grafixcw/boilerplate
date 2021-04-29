@@ -1,0 +1,45 @@
+// Components: Captcha
+// -----------------------------------------------------------------------------
+
+// Variables
+$captcha-height: 45px !default;
+
+// Base Styles
+.captcha {
+  display: flex;
+  align-items: center;
+  height: $captcha-height;
+}
+.captcha-left {
+  text-align: right;
+  width: calc(100% - #{$captcha-height} + 5px);
+
+  > img {
+    display: inline-block;
+    max-width: 100%;
+  }
+}
+.captcha-right {
+  height: 100%;
+  width: $captcha-height;
+}
+.btn-refresh {
+  font-size: 24px;
+  font-weight: normal;
+  height: $captcha-height;
+  line-height: 24px;
+  padding: 6px;
+  text-align: center;
+  width: $captcha-height;
+
+  &,
+  &:active,
+  &:focus {
+    background-color: transparent;
+    color: #c7c8ca;
+  }
+  &:hover {
+    background-color: transparent;
+    color: #464547;
+  }
+}

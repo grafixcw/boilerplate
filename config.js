@@ -16,6 +16,7 @@ module.exports = {
   scripts: {
     copy: "node_modules/jquery/dist/jquery.min.js",
     input: [
+      "src/vendor/polyfills/object.assign.js",
       "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
       "src/vendor/bootnavbar/js/bootnavbar.js",
       "node_modules/owl.carousel/dist/owl.carousel.min.js",

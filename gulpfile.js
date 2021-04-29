@@ -102,9 +102,6 @@ const buildScripts = () => {
     .pipe(dest(config.scripts.output));
 };
 
-const copyScripts = () => {
-  return src(config.scripts.copy).pipe(dest(config.scripts.output));
-};
 
 // Convert a set of images into a spritesheet and CSS variables
 const buildSprites = (cb) => {
@@ -160,13 +157,22 @@ const buildTemplates = () => {
   return src(config.templates.input)
     .pipe(plumber())
     .pipe(
-      data((file) => {
+      data(() => {
         return JSON.parse(fs.readFileSync("website.json"));
       })
     )
     .pipe(twig())
     .pipe(dest(config.templates.output));
 };
+
+
+const copyFonts = () => {
+  return src(config.fonts.input).pipe(dest(config.fonts.output));
+};
+const copyScripts = () => {
+  return src(config.scripts.copy).pipe(dest(config.scripts.output));
+};
+
 
 // Watch for changes to the source directory
 const serveDist = (cb) => {
@@ -204,7 +210,7 @@ exports.sprites = buildSprites;
 
 // Build task
 exports.build = series(
-  copyScripts,
+  parallel(copyFonts, copyScripts),
   parallel(buildScripts, buildStyles, buildTemplates),
   buildImages
 );

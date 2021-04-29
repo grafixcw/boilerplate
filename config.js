@@ -4,6 +4,10 @@ module.exports = {
     output: "build/"
   },
   clean: ["dist/"],
+  fonts: {
+    input: "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.{eot,svg,ttf,woff,woff2}",
+    output: "dist/css/fonts/"
+  },
   images: {
     input: "src/images/*",
     output: "dist/images",

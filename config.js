@@ -14,6 +14,7 @@ module.exports = {
     input: [
       "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
       "src/vendor/bootnavbar/js/bootnavbar.js",
+      "node_modules/owl.carousel/dist/owl.carousel.min.js",
       "src/scripts/app.js"
     ],
     output: "dist/js",

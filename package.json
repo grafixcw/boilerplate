@@ -53,5 +53,8 @@
     "gulp-zip": "^5.1.0",
     "gulp.spritesmith": "^6.11.0",
     "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
   }
 }

@@ -10,6 +10,7 @@ module.exports = {
     watch: "src/images/*"
   },
   scripts: {
+    copy: "node_modules/jquery/dist/jquery.min.js",
     input: "src/scripts/app.js",
     output: "dist/js",
     watch: "src/scripts/**/*.js"

@@ -102,6 +102,10 @@ const buildScripts = () => {
     .pipe(dest(config.scripts.output));
 };
 
+const copyScripts = () => {
+  return src(config.scripts.copy).pipe(dest(config.scripts.output));
+};
+
 // Convert a set of images into a spritesheet and CSS variables
 const buildSprites = (cb) => {
   const spriteData = gulp
@@ -183,6 +187,7 @@ const reloadBrowser = (cb) => {
 // Watch all file changes
 const watchSource = () => {
   watch(config.images.watch, series(buildImages, reloadBrowser));
+  watch(config.scripts.copy, series(copyScripts, reloadBrowser));
   watch(config.scripts.watch, series(buildScripts, reloadBrowser));
   watch(config.styles.watch, series(buildStyles, reloadBrowser));
   watch(config.templates.watch, series(buildTemplates, reloadBrowser));
@@ -199,6 +204,7 @@ exports.sprites = buildSprites;
 
 // Build task
 exports.build = series(
+  copyScripts,
   parallel(buildScripts, buildStyles, buildTemplates),
   buildImages
 );

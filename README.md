@@ -1,126 +1,92 @@
-# boilerplate
+# [PROJE_ADI] Web Sitesi
 
-A boilerplate for building web projects with [Gulp.js](https://gulpjs.com/).
+[PROJE_ADI] için tasarlanmış web sitesinin HTML dönüşümü projesidir.
 
-## Getting Started
+## Başlarken
 
-### Features
+Proje geliştirilirken HTML, CSS ve JavaScript harici olarak bazı teknolojiler kullanılmıştır. Geliştirme için en azından bu araçlar/teknolojilerin kullanımı hakkında bilginiz olması beklenir.
 
-- Compile, minify, autoprefix SASS files.
-- Compile, concatenate and minify JavaScript.
-- Render Twig templates.
-- Optimise GIF, JPEG, PNG and SVG images.
-- Archive `dist` content.
-- Watch for file changes, and automatically recompile build.
-- Hot reloading with `browser-sync`.
+### Araçlar / Teknolojiler
 
-### Quick Start
+- Node.js
+- NPM / Yarn Paket Yöneticisi
+- Gulp.js
+- Bootstrap
+- jQuery
+- SASS CSS Preprocessor
+
+## Özellikler
+
+- Sass dosyaları CSS'e dönüştürülür. Dönüştürme sonrası `autoprefixer` ile `package.json` dosyası içerisinde belirtilmiş, tarayıcı listesine göre stil değerlerine ön ek eklenir. Tek dosyada birleştirilip küçültülür.
+- JavaScript dosyaları tek dosyada birleştirilip küçültülür. Güncel _ES6_ yazımını destekler, `Babel` ile _ES5_ yazımına çevrilir.
+- Görseller formatlarına uygun şekilde optimize edilir.
+- `Browser-sync` ile canlı sunucu oluşturulup, dosya değişikliklerine göre sayfa yenilemeleri otomatik yapılır.
+- Çıktı dosyalarını zip olarak arşivleyebilirsiniz.
+
+## Kurulum Talimatları
+
+### Projeyi indirin
+
+Projeyi, _git_ üzerinden klonlayabilir ya da [bu linkten]([GITHUB_REPO]/archive/master.zip) indirebilirsiniz.
+
+```bash
+git clone [GITHUB_REPO].git
+```
+
+### Node.js
+
+Geliştirmeye başlamadan önce sisteminizde `Node.js` yüklü olduğundan emin olunuz. Eğer sisteminizde yüklü değilse [nodejs.org](https://nodejs.org) adresinden işletim sisteminize uygun sürümü indirip kurunuz.
+
+> **UYARI!**
+>
+> Mevcut sisteminizde daha önceden Gulp.js'yi global olarak kurduysanız, lütfen `npm rm --global gulp` komutu ile sisteminizden kaldırın.
+>
+> Detaylı bilgi için [bu makaleyi](https://medium.com/gulpjs/gulp-sips-command-line-interface-e53411d4467) okuyabilirsiniz.
+
+### Gulp.js CLI'yi yükleyin
+
+Komutu çalıştırarak Gulp.js CLI'yi yükleyin.
 
 ```
-# 1 Clone this repo
-git clone https://github.com/mavisland/boilerplate.git
+npm install --global gulp-cli
+```
 
-# 2 Navigate into the repo directory
-cd boilerplate
+### Bağımlılıkları yükleyin
 
-# 3 Install all node packages
+Proje geliştirilirken _Yarn paket yöneticisi_ kullanılmıştır. Kullanmak istediğiniz paket yöneticisine uygun aşağıdaki kurulum komutlarını çalıştırın.
+
+```
+# Yarn Paket Yöneticisi için;
+yarn install
+
+# NPM Paket Yöneticisi için;
 npm install
-
-# 4 Get started
-npm run start
 ```
 
-### Requirements
+### Geliştirmeye başlayın
 
-This project requires you have [Node.js](https://nodejs.org/) with [npm](https://www.npmjs.com/get-npm) installed.
-This project requires you have a global installation of [gulp-cli](https://www.npmjs.com/package/gulp-cli).
+Belirtilen talimatları uyguladıktan sonra aşağıdaki komutu çalıştırarak geliştirmeye başlayabilirsiniz.
 
 ```
-# Install gulp-cli globally
-npm install -g gulp-cli
+# Yarn Paket Yöneticisi için;
+yarn dev
+
+# NPM Paket Yöneticisi için;
+npm run dev
 ```
 
-## Documentation
+**Happy coding 😎**
 
-Add your source files to the appropriate `src` subdirectories. Gulp.js will process and and compile them into `dist`.
+---
 
-### Styles
+## Demo
 
-Files in the `src/scss` directory will be compiled to `dist/css`.
+Projeyi [buradan]([DEMO_ADRES]) inceleyebilirsiniz.
 
-### Scripts
+## Hata ve Yeni Özellik İstekleri
 
-Put your JavaScript files in the `src/js` directory. Files placed directly in the `src/js` folder will compile directly to `dist/js` as both minified and unminified files.
+Geliştirme aşamasında herhangi bir hata mı aldınız? Yeni bir özellik eklemenmesini mi istiyorsunuz? O halde Github üzerinde [yeni bir istek başlığı]([GITHUB_REPO]/issues/new) oluşturunuz.
 
-### Templates
+## Telif Hakkı & Lisans
 
-Put your `Twig` templates in the `src/html` directory. Files placed directly in the `src/html` folder will compile directly to `dist`.
-
-### Images
-
-Place GIF, JPEG, PNG and SVG images in the `src/images` directory. Images will be optimized with `imagemin` plugins and compiled into `dist/images`.
-
-### Sprites
-
-Converts a series of images in the `src/sprites/image` folder to a sprite sheet and CSS styles.
-
-## Options
-
-### Tasks
-
-| Task Name | Task Decription                                 |
-| --------- | ----------------------------------------------- |
-| archive   | Archive `dist` content                          |
-| build     | Run all tasks                                   |
-| images    | Optimise GIF, JPEG, PNG and SVG images          |
-| serve     | Watch for changes to the `src` directory        |
-| scripts   | Concanate & minify JavaScript files             |
-| sprites   | Your images, icons, et al convert a spritesheet |
-| styles    | Compile, autoprefix & minify SASS files         |
-| templates | Render Twig templates                           |
-| watch     | Watch all file changes                          |
-
-### Paths
-
-Adjust the `input`, `output`, `watch` paths for all of the Gulp.js tasks under the `paths` variable. Paths are relative to the root project folder.
-
-```js
-// Paths
-const paths = {
-  archive: {
-    input: "dist/**",
-    output: "build/",
-  },
-  images: {
-    input: ["src/images/*.{gif,ico,jpg,png,svg}", "src/sprites/s.png"],
-    output: "dist/images",
-    watch: ["src/images/*.{gif,ico,jpg,png,svg}", "src/sprites/s.png"],
-  },
-  scripts: {
-    input: ["src/js/plugins.js", "src/js/main.js"],
-    output: "dist/js",
-    watch: "src/js/**/*.js",
-  },
-  server: {
-    root: "dist/",
-  },
-  sprites: {
-    input: "src/sprites/**/*.svg",
-    output: "dist/images",
-  },
-  styles: {
-    input: "src/scss/*.scss",
-    output: "dist/css",
-    watch: "src/scss/**/*.scss",
-  },
-  templates: {
-    input: "src/html/*.twig",
-    output: "dist/",
-    watch: "src/html/**/*.twig",
-  },
-};
-```
-
-## License
-
-The code is available under the [MIT License](LICENSE.md).
+Telif hakları [Grafix Kreatif Yazılım Atölyesi](http://grafix.com.tr) ve [Tanju Yıldız](https://tanjuyildiz.com)'a aittir. Proje kodları [MIT lisansı]([GITHUB_REPO]/blob/master/LICENSE) altında sunulmuştur.

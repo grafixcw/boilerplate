@@ -15,6 +15,10 @@
 @import "vendor/fancybox/fancybox";
 @import "vendor/vov.css/vov";
 
+//## Base
+@import "base/generic";
+@import "base/commons";
+
 //## Helpers
 @import "vendor/helpers/scss/back-to-top";
 @import "vendor/helpers/scss/captcha";

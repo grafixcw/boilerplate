@@ -1,0 +1,44 @@
+// Base: Generic Styles
+// -----------------------------------------------------------------------------
+
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+
+  @include from($widescreen) {
+    font-size: 15px;
+  }
+  @include from($xlargescreen) {
+    font-size: 16px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include until($desktop) {
+    padding-top: 50px;
+  }
+}
+
+a {
+  transition: all 0.2s;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+.line-clamp-2 {
+  @include word-wrap(2, $font-size-base, $line-height-base);
+}
+.line-clamp-3 {
+  @include word-wrap(3, $font-size-base, $line-height-base);
+}
+.line-clamp-4 {
+  @include word-wrap(4, $font-size-base, $line-height-base);
+}

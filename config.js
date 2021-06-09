@@ -24,6 +24,7 @@ module.exports = {
       "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
       "src/vendor/fancybox/fancybox-init.js",
       "src/vendor/helpers/js/back-to-top.js",
+      "src/vendor/helpers/js/utilities.js",
       "src/scripts/app.js",
     ],
     output: "dist/js",

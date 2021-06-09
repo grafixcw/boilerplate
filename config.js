@@ -9,9 +9,9 @@ module.exports = {
     output: "dist/css/fonts/",
   },
   images: {
-    input: "src/images/*",
+    input: "src/images/**/*",
     output: "dist/images",
-    watch: "src/images/*",
+    watch: "src/images/**/*",
   },
   scripts: {
     copy: "node_modules/jquery/dist/jquery.min.js",

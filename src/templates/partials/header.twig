@@ -1,1 +1,34 @@
-    <!-- header content -->
+    <header class="header">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">{{ meta.title }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="javascript:;"><i class="bi bi-house-door-fill"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:;">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="javascript:;" tabindex="-1">Disabled</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:;" id="dropdown01" data-toggle="dropdown">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="javascript:;">Another action</a>
+                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Arama yapın...">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+

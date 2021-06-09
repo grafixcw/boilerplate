@@ -1,22 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.lang }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ desc }}">
-    <meta name="author" content="{{ author }}">
-    <meta name="theme-color" content="#ffb909">
-    <link rel="apple-touch-icon" href="images/favicon.png">
-    <link rel="shortcut icon" href="images/favicon.png">
+    <title>{{ meta.title }}</title>
+    <meta name="description" content="{{ meta.description }}">
+    <meta name="keywords" content="{{ meta.keywords }}">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="images/icons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/icons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="images/icons/favicon.ico">
+    <meta name="theme-color" content="#563d7c">
+    {% block styles %}{% endblock %}
 </head>
 <body>
-{% include "../partials/header.twig" %}
-{% block content %}{% endblock %}
-{% include "../partials/footer.twig" %}
+    {% include "../partials/header.twig" %}
+    {% block content %}{% endblock %}
+    {% include "../partials/footer.twig" %}
     <script src="js/jquery.min.js"></script>
+    {% block third_party_scripts %}{% endblock %}
     <script src="js/app.min.js"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>

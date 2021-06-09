@@ -1,0 +1,670 @@
+{# tema-rehberi.twig #}
+{% extends "layouts/master.twig" %}
+{% set pageName = "tema" %}
+{% set pageTitle = "Tema Test Sayfası" %}
+{% block styles %}
+    <style>
+        body {
+            padding-top: 4.125rem;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="main-content">
+        <div class="section page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="sidebar" data-toggle="sidebar">
+                            <div id="bolumler" class="list-group">
+                                <a class="list-group-item list-group-item-action" href="#tipografi">Tipografi</a>
+                                <a class="list-group-item list-group-item-action" href="#tablo">Tablolar</a>
+                                <a class="list-group-item list-group-item-action" href="#renkler">Renkler</a>
+                                <a class="list-group-item list-group-item-action" href="#butonlar">Butonlar</a>
+                                <a class="list-group-item list-group-item-action" href="#dropdown">Açılır Menüler</a>
+                                <a class="list-group-item list-group-item-action" href="#form">Form Elemanları</a>
+                                <a class="list-group-item list-group-item-action" href="#list-group">Liste Grupları</a>
+                                <a class="list-group-item list-group-item-action" href="#sayfalama">Sayfalama</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="content">
+                            <div class="block" id="tipografi">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Tipografi</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <h1>h1. Bootstrap heading <small class="text-muted">With faded secondary text</small></h1>
+                                        <h2>h2. Bootstrap heading <small class="text-muted">With faded secondary text</small></h2>
+                                        <h3>h3. Bootstrap heading <small class="text-muted">With faded secondary text</small></h3>
+                                        <h4>h4. Bootstrap heading <small class="text-muted">With faded secondary text</small></h4>
+                                        <h5>h5. Bootstrap heading <small class="text-muted">With faded secondary text</small></h5>
+                                        <h6>h6. Bootstrap heading <small class="text-muted">With faded secondary text</small></h6>
+                                        <hr>
+                                        <p class="lead">This is a lead paragraph. It stands out from regular paragraphs.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nostrum veritatis omnis, corrupti neque quae qui rerum voluptate! Corporis accusantium eligendi dolore ipsa repudiandae vitae ipsum? Explicabo ullam natus rem.</p>
+                                        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                                        <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                                        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+                                        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                                        <p><u>This line of text will render as underlined</u></p>
+                                        <p><small>This line of text is meant to be treated as fine print.</small></p>
+                                        <p><strong>This line rendered as bold text.</strong></p>
+                                        <p><em>This line rendered as italicized text.</em></p>
+                                        <p><abbr title="attribute">attr</abbr></p>
+                                        <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+                                        <blockquote class="blockquote">
+                                            <p class="mb-0">A well-known quote, contained in a blockquote element.</p>
+                                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="tablo">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Tablolar</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First</th>
+                                                    <th scope="col">Last</th>
+                                                    <th scope="col">Handle</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-sm table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First</th>
+                                                    <th scope="col">Last</th>
+                                                    <th scope="col">Handle</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="renkler">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Renkler</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-primary text-white">.bg-primary</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-secondary text-white">.bg-secondary</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-success text-white">.bg-success</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-danger text-white">.bg-danger</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-warning text-white">.bg-warning</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-info text-white">.bg-info</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-light text-gray-dark">.bg-light</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-dark text-white">.bg-dark</div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="p-3 mb-3 bg-white text-gray-dark">.bg-white</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="butonlar">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Butonlar</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-primary">btn-primary</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-secondary">btn-secondary</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-success">btn-success</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-danger">btn-danger</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-warning">btn-warning</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-info">btn-info</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-light">btn-light</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-dark">btn-dark</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-link">btn-link</button>
+                                            </li>
+                                        </ul>
+                                        <ul class="list-inline mt-4">
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">btn-outline-primary</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">btn-outline-secondary</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-success">btn-outline-success</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-danger">btn-outline-danger</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-warning">btn-outline-warning</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-info">btn-outline-info</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-light">btn-outline-light</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-sm btn-outline-dark">btn-outline-dark</button>
+                                            </li>
+                                        </ul>
+                                        <ul class="list-inline mt-4">
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-primary btn-lg">btn-lg</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-secondary btn-lg">btn-lg</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-primary">btn</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-secondary">btn</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-primary btn-sm">btn-sm</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-secondary btn-sm">btn-sm</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-primary btn-xs">btn-xs</button>
+                                            </li>
+                                            <li class="list-inline-item mb-2">
+                                                <button type="button" class="btn btn-secondary btn-xs">btn-xs</button>
+                                            </li>
+                                        </ul>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-primary btn-block">btn-block</button>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-secondary btn-block">btn-block</button>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="btn btn-success btn-block">btn-block</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="dropdown">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Açılır Menüler</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="px-2">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <h6 class="dropdown-header">Dropdown header</h6>
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item active" href="#">Active Item</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Disabled link</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="px-2">
+                                                <div class="dropdown">
+                                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link</a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                        <a class="dropdown-item" href="#">Another action</a>
+                                                        <a class="dropdown-item" href="#">Something else here</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="form">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Form Elemanları</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Email address</label>
+                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect1">Example select</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect2">Example multiple select</label>
+                                                <select multiple class="form-control" id="exampleFormControlSelect2">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="block-title">Checkbox ve Radio Butonlar</div>
+                                        <form action="">
+                                            <div class="form-row">
+                                                <div class="form-group col-sm-6 col-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                                                        <label class="form-check-label" for="defaultCheck2">Disabled checkbox</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-sm-6 col-md-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                        <label class="form-check-label" for="exampleRadios1">Default radio</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                        <label class="form-check-label" for="exampleRadios2">Second default radio</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                                                        <label class="form-check-label" for="exampleRadios3">Disabled radio</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-sm-6 col-md-3">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                        <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-sm-6 col-md-3">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                                                        <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="block-title">Dosya Yükleme</div>
+                                        <form action="">
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Example file input</label>
+                                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="block-title">Boyutlar</div>
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input class="form-control" type="text" placeholder="Default input">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <select class="form-control form-control-lg">
+                                                        <option>Large select</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <select class="form-control">
+                                                        <option>Default select</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <select class="form-control form-control-sm">
+                                                        <option>Small select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="block-title">Satıriçi Form</div>
+                                        <form class="form-inline">
+                                            <div class="form-group mb-2">
+                                                <label for="staticEmail2" class="sr-only">Email</label>
+                                                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                                            </div>
+                                            <div class="form-group mx-sm-3 mb-2">
+                                                <label for="inputPassword2" class="sr-only">Password</label>
+                                                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+                                        </form>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="block-title">Yatay Form</div>
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                                <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="inputEmail3">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                                <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="inputPassword3">
+                                                </div>
+                                            </div>
+                                            <fieldset class="form-group">
+                                                <div class="row">
+                                                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                                                    <div class="col-sm-10">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                                            <label class="form-check-label" for="gridRadios1">First radio</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                                            <label class="form-check-label" for="gridRadios2">Second radio</label>
+                                                        </div>
+                                                        <div class="form-check disabled">
+                                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                                            <label class="form-check-label" for="gridRadios3">Third disabled radio</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <div class="form-group row">
+                                                <div class="col-sm-2">Checkbox</div>
+                                                <div class="col-sm-10">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                                        <label class="form-check-label" for="gridCheck1">Example checkbox</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-10">
+                                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="block-title">Yardımcı Mesajlar</div>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="inputPassword5">Password</label>
+                                                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                                                <small id="passwordHelpBlock" class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+                                            </div>
+                                        </form>
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label for="inputPassword6">Password</label>
+                                                <input type="password" id="inputPassword6" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                                                <small id="passwordHelpInline" class="text-muted">Must be 8-20 characters long.</small>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="list-group">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Liste Grupları</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-3 col-lg-6 col-xl-3 mb-3">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item active">Cras justo odio</li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">Dapibus ac facilisis in <span class="badge badge-primary badge-pill">14</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">Morbi leo risus <span class="badge badge-primary badge-pill">7</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">Porta ac consectetur ac <span class="badge badge-primary badge-pill">2</span></li>
+                                                    <li class="list-group-item disabled">Vestibulum at eros</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3 col-lg-6 col-xl-3 mb-3">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item list-group-item-action active">Cras justo odio</a>
+                                                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                                                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                                                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                                                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3 col-lg-6 col-xl-3 mb-3">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item list-group-item-primary">.list-group-item-primary</li>
+                                                    <li class="list-group-item list-group-item-secondary">.list-group-item-secondary</li>
+                                                    <li class="list-group-item list-group-item-success">.list-group-item-success</li>
+                                                    <li class="list-group-item list-group-item-danger">.list-group-item-danger</li>
+                                                    <li class="list-group-item list-group-item-warning">.list-group-item-warning</li>
+                                                    <li class="list-group-item list-group-item-info">.list-group-item-info</li>
+                                                    <li class="list-group-item list-group-item-light">.list-group-item-light</li>
+                                                    <li class="list-group-item list-group-item-dark">.list-group-item-dark</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3 col-lg-6 col-xl-3 mb-3">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">.list-group-item-primary</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">.list-group-item-secondary</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">.list-group-item-success</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-danger">.list-group-item-danger</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-warning">.list-group-item-warning</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-info">.list-group-item-info</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">.list-group-item-light</a>
+                                                    <a href="#" class="list-group-item list-group-item-action list-group-item-dark">.list-group-item-dark</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="sayfalama">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Sayfalama</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="row">
+                                            <div class="col-xl-4">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination pagination-lg">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination justify-content-xl-center">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination pagination-sm justify-content-xl-end">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block" id="tooltip">
+                                <div class="block-inner">
+                                    <div class="block-header">
+                                        <div class="block-title">Tooltipler</div>
+                                    </div>
+                                    <div class="block-body">
+                                        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

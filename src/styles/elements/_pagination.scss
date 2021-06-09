@@ -1,0 +1,26 @@
+// Components: Pagination
+// ---------------------------------------------------------
+
+.pagination {
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  margin-top: 1.875rem;
+}
+.page-item {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &:first-child,
+  &:last-child {
+    .page-link {
+      border-radius: $pagination-border-radius;
+    }
+  }
+}
+.page-link {
+  border-radius: $pagination-border-radius;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+  min-width: 2rem;
+  text-align: center;
+}

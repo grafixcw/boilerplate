@@ -1,0 +1,74 @@
+// Page Banner
+// ---------------------------------------------------------
+
+.page-banner {
+  background-color: $dark;
+  box-shadow: inset 0 -2px 0 0 $white, 0 0 60px 30px rgba($dark, 0.25);
+  color: $white;
+  height: 8rem;
+  position: relative;
+  width: 100%;
+
+  > .container {
+    height: 100%;
+  }
+  &[data-bg-image] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  // Responsive Styles
+  @include from($desktop) {
+    height: 10rem;
+  }
+  @include from($widescreen) {
+    height: 11.5rem;
+  }
+}
+.page-banner-inner {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  text-align: center;
+
+  &:after {
+    background-color: $white;
+    content: "";
+    display: none;
+    height: 1px;
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+  }
+  @include from($desktop) {
+    &:after {
+      display: block;
+    }
+  }
+}
+.page-banner-title {
+  color: $white;
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+
+  // Responsive Styles
+  @include from($desktop) {
+    font-size: 1.5rem;
+  }
+  @include from($widescreen) {
+    font-size: 2rem;
+  }
+  @include from($xlargescreen) {
+    font-size: 2.25rem;
+  }
+}

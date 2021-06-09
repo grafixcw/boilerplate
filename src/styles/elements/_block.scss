@@ -1,0 +1,265 @@
+// Components: Block
+// ---------------------------------------------------------
+
+// Base Styles
+.block {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-top: 0;
+  }
+  & + .block {
+    margin-top: 1rem;
+  }
+
+  // Responsive Styles
+  @include from($xlargescreen) {
+    & + .block {
+      margin-top: 3rem;
+    }
+  }
+}
+
+// Wrapper
+.block-inner {
+  height: 100%;
+  position: relative;
+  transition: 0.25s ease-in-out;
+
+  [class*="block-"] {
+    position: relative;
+
+    & + [class*="block-"] {
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+// Header
+.block-header {
+  &.has-divider {
+    .block-title {
+      display: flex;
+      align-items: center;
+
+      &:after {
+        background-color: currentColor;
+        content: "";
+        height: 1px;
+        flex-grow: 1;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  // Responsive Styles
+  @include until($mobile) {
+    .row > [class*="col-"] + [class*="col-"] {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Title
+.block-title {
+  color: $headings-color;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+  transition: 0.25s ease-in-out;
+
+  .block-body & {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  // Responsive Styles
+  @include from($tablet) {
+    font-size: 1.25rem;
+  }
+  @include from($desktop) {
+    font-size: 1.5rem;
+
+    .block-body & {
+      font-size: 1.25rem;
+    }
+  }
+  @include from($widescreen) {
+    font-size: 1.75rem;
+
+    .block-body & {
+      font-size: 1.5rem;
+    }
+  }
+  @include from($xlargescreen) {
+    font-size: 2rem;
+
+    .block-body & {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+// Title Prefix
+.block-title-prefix {
+  color: $primary;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.block-desc {
+  color: $body-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+// Block: Link
+.block-link {
+  color: $body-color;
+  display: inline-flex;
+  align-items: center;
+  font-size: 90%;
+  font-weight: normal;
+  line-height: 1.5;
+
+  &:hover {
+    color: $secondary;
+  }
+  .block-header & {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .block-footer & {
+    box-shadow: 0 1px 0 currentColor;
+  }
+}
+
+// Block: Options
+.block-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  .btn {
+    background-color: #e6e6e6;
+    border-radius: 0;
+    color: $body-color;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 2rem;
+    line-height: 1;
+    padding: 0.5rem;
+    width: 2rem;
+
+    &.active {
+      color: $primary;
+    }
+  }
+}
+
+// Object
+.block-object {
+  border-radius: 0.25rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+// Image
+.block-image {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+
+// Body
+.block-body {
+  @extend .clearfix;
+}
+
+// Footer
+.block-footer {
+  .pagination {
+    margin-bottom: 1.25rem;
+    margin-top: 1.875rem;
+  }
+}
+
+// Carousel Pagination
+.block-pagination {
+  font-size: 0;
+  line-height: 0;
+
+  .owl-nav,
+  .owl-dots {
+    display: inline-block;
+    position: relative;
+
+    * + & {
+      margin-left: $grid-gutter-width / 2;
+    }
+  }
+  .owl-prev,
+  .owl-next,
+  .owl-dot {
+    background-color: #92a7b8;
+    border: 0;
+    color: $white;
+
+    &:hover {
+      background-color: $primary;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  .owl-prev,
+  .owl-next {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.6666667;
+    height: $grid-gutter-width;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    width: $grid-gutter-width;
+  }
+  .owl-dot {
+    border-radius: 100%;
+    height: 0.75rem;
+    width: 0.75rem;
+
+    + .owl-dot {
+      margin-left: 0.625rem;
+    }
+    &.active {
+      background-color: $primary;
+    }
+  }
+}
+
+// Divider
+hr.block-divider {
+  border-top: 1px solid #c6c8c5;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  // Responsive Styles
+  @include from($tablet) {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  @include from($widescreen) {
+    margin-bottom: 1.875rem;
+    margin-top: 1.875rem;
+  }
+  @include from($xlargescreen) {
+    margin-bottom: 3.125rem;
+    margin-top: 3.125rem;
+  }
+}

@@ -1,0 +1,72 @@
+// Components: Miscellaneous
+// ---------------------------------------------------------
+
+// Wrappers
+.image-wrapper {
+  border-radius: 4px;
+  float: left;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  img {
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  & ~ .text-wrapper {
+    float: none;
+  }
+  &.is-right {
+    float: right;
+    text-align: right;
+  }
+
+  // Responsive Styles
+  @include only($widescreen, $mobile) {
+    max-width: 55%;
+  }
+  @include from($tablet) {
+    margin-right: 1rem;
+
+    &.is-right {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+  }
+}
+
+// Share Links
+.share-links {
+  display: flex;
+  align-items: center;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+
+  > span {
+    color: $dark;
+    display: inline-block;
+    font-weight: 600;
+    padding: 4px 10px;
+    text-transform: uppercase;
+  }
+  > a {
+    background-color: #f2f3f3;
+    border-radius: 4px;
+    color: darken($secondary, 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 4px;
+    text-align: center;
+    width: 30px;
+
+    &:hover {
+      background-color: lighten(darken($primary, 15%), 30%);
+      color: $white;
+    }
+    & + a {
+      margin-left: 4px;
+    }
+  }
+}

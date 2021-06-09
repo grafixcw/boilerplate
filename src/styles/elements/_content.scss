@@ -1,0 +1,12 @@
+//** Content
+
+.content-wrapper,
+.main-content,
+.content {
+  position: relative;
+}
+.content-wrapper {
+  @include until($desktop) {
+    padding-top: 50px;
+  }
+}

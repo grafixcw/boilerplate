@@ -1,0 +1,35 @@
+// Components: Sections
+// ---------------------------------------------------------
+
+// Base Styles
+.section {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  position: relative;
+
+  // Responsive Styles
+  @include from($mobile) {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+  @include from($tablet) {
+    padding-bottom: 3.25rem;
+    padding-top: 3.25rem;
+  }
+  @include from($desktop) {
+    padding-bottom: 3.5rem;
+    padding-top: 3.5rem;
+
+    .content-wrapper &:last-child {
+      padding-bottom: 7rem;
+    }
+  }
+  @include from($widescreen) {
+    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
+
+    .content-wrapper &:last-child {
+      padding-bottom: 7.5rem;
+    }
+  }
+}

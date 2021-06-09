@@ -32,7 +32,7 @@ const banner = [
   " * @link <%= pkg.homepage %>",
   " * @license <%= pkg.license %>",
   " */",
-  ""
+  "",
 ].join("\n");
 
 // Get Timestamp
@@ -50,9 +50,7 @@ const getTimestamp = () => {
 // Archive pre-existing content from output folders
 const archiveDist = (cb) => {
   src(config.archive.input)
-    .pipe(
-      zip(pkg.name + "_v" + pkg.version + "-build_" + getTimestamp() + ".zip")
-    )
+    .pipe(zip(pkg.name + "_v" + pkg.version + "-build_" + getTimestamp() + ".zip"))
     .pipe(dest(config.archive.output));
   return cb();
 };
@@ -67,16 +65,18 @@ const cleanDist = (cb) => {
 const buildImages = () => {
   return src(config.images.input)
     .pipe(plumber())
-    .pipe(imagemin({
-      interlaced: true,
-      progressive: true,
-      optimizationLevel: 5,
-      svgoPlugins: [
-        {
-          removeViewBox: true
-        }
-      ]
-    }))
+    .pipe(
+      imagemin({
+        interlaced: true,
+        progressive: true,
+        optimizationLevel: 5,
+        svgoPlugins: [
+          {
+            removeViewBox: true,
+          },
+        ],
+      })
+    )
     .pipe(dest(config.images.output));
 };
 
@@ -85,40 +85,46 @@ const buildScripts = () => {
   return src(config.scripts.input)
     .pipe(plumber())
     .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.init()))
-    .pipe(babel({
-      presets: ["@babel/env"]
-    }))
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
     .pipe(concat("app.js"))
     .pipe(header(banner, { pkg: pkg }))
     .pipe(dest(config.scripts.output))
-    .pipe(terser({
-      keep_fnames: true,
-      mangle: false
-    }))
-    .pipe(rename({
-      suffix: ".min"
-    }))
+    .pipe(
+      terser({
+        keep_fnames: true,
+        mangle: false,
+      })
+    )
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
     .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.write(".")))
     .pipe(dest(config.scripts.output));
 };
 
-
 // Convert a set of images into a spritesheet and CSS variables
 const buildSprites = (cb) => {
-  const spriteData = gulp
-    .src(config.sprites.input)
+  const spriteData = src(config.sprites.input)
     .pipe(plumber())
-    .pipe(spritesmith({
-      imgName: "s.png",
-      cssName: "_sprites.scss",
-      cssFormat: "scss",
-      cssTemplate: "src/sprites/scss.template.handlebars",
-      imgPath: "../images/s.png",
-      padding: 3,
-      imgOpts: {
-        quality: 100
-      }
-    }));
+    .pipe(
+      spritesmith({
+        imgName: "s.png",
+        cssName: "_sprites.scss",
+        cssFormat: "scss",
+        cssTemplate: "src/sprites/scss.template.handlebars",
+        imgPath: "../images/s.png",
+        padding: 3,
+        imgOpts: {
+          quality: 100,
+        },
+      })
+    );
 
   spriteData.img.pipe(dest(config.sprites.output));
   spriteData.css.pipe(dest(config.sprites.output));
@@ -131,23 +137,29 @@ const buildStyles = () => {
   return src(config.styles.input)
     .pipe(plumber())
     .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.init()))
-    .pipe(sass({
-      outputStyle: "expanded"
-    }))
+    .pipe(
+      sass({
+        outputStyle: "expanded",
+      })
+    )
     .pipe(postcss([autoprefixer()]))
     .pipe(header(banner, { pkg: pkg }))
     .pipe(dest(config.styles.output))
-    .pipe(cleanCSS({
-      level: {
-        1: {
-          specialComments: 0
-        }
-      }
-    }))
+    .pipe(
+      cleanCSS({
+        level: {
+          1: {
+            specialComments: 0,
+          },
+        },
+      })
+    )
     .pipe(header(banner, { pkg: pkg }))
-    .pipe(rename({
-      suffix: ".min"
-    }))
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
     .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.write(".")))
     .pipe(dest(config.styles.output));
 };
@@ -158,13 +170,12 @@ const buildTemplates = () => {
     .pipe(plumber())
     .pipe(
       data(() => {
-        return JSON.parse(fs.readFileSync("website.json"));
+        return JSON.parse(fs.readFileSync(config.templates.data));
       })
     )
     .pipe(twig())
     .pipe(dest(config.templates.output));
 };
-
 
 const copyFonts = () => {
   return src(config.fonts.input).pipe(dest(config.fonts.output));
@@ -173,13 +184,12 @@ const copyScripts = () => {
   return src(config.scripts.copy).pipe(dest(config.scripts.output));
 };
 
-
 // Watch for changes to the source directory
 const serveDist = (cb) => {
   browserSync.init({
     server: {
-      baseDir: config.server.root
-    }
+      baseDir: config.server.root,
+    },
   });
   cb();
 };
@@ -196,7 +206,7 @@ const watchSource = () => {
   watch(config.scripts.copy, series(copyScripts, reloadBrowser));
   watch(config.scripts.watch, series(buildScripts, reloadBrowser));
   watch(config.styles.watch, series(buildStyles, reloadBrowser));
-  watch(config.templates.watch, series(buildTemplates, reloadBrowser));
+  watch([config.templates.watch, config.templates.data], series(buildTemplates, reloadBrowser));
 };
 
 // Archive task

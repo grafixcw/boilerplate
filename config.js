@@ -1,17 +1,17 @@
 module.exports = {
   archive: {
     input: "dist/**",
-    output: "build/"
+    output: "build/",
   },
   clean: ["dist/"],
   fonts: {
     input: "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.{eot,svg,ttf,woff,woff2}",
-    output: "dist/css/fonts/"
+    output: "dist/css/fonts/",
   },
   images: {
     input: "src/images/*",
     output: "dist/images",
-    watch: "src/images/*"
+    watch: "src/images/*",
   },
   scripts: {
     copy: "node_modules/jquery/dist/jquery.min.js",
@@ -24,26 +24,27 @@ module.exports = {
       "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
       "src/vendor/fancybox/fancybox-init.js",
       "src/vendor/helpers/js/back-to-top.js",
-      "src/scripts/app.js"
+      "src/scripts/app.js",
     ],
     output: "dist/js",
-    watch: "src/scripts/**/*.js"
+    watch: "src/scripts/**/*.js",
   },
   server: {
-    root: "dist/"
+    root: "dist/",
   },
   sprites: {
     input: "src/sprites/images/*.png",
-    output: "src/images/"
+    output: "src/images/",
   },
   styles: {
     input: "src/styles/*.scss",
     output: "dist/css",
-    watch: ["src/styles/**/*.scss", "src/vendor/**/*.scss"]
+    watch: ["src/styles/**/*.scss", "src/vendor/**/*.scss"],
   },
   templates: {
+    data: "src/data/content.json",
     input: "src/templates/*.twig",
     output: "dist/",
-    watch: ["src/templates/**/*.twig", "website.json"]
-  }
+    watch: "src/templates/**/*.twig",
+  },
 };

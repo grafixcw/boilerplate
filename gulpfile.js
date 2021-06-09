@@ -140,6 +140,7 @@ const buildStyles = () => {
     .pipe(
       sass({
         outputStyle: "expanded",
+        includePaths: ["./node_modules", "./src"],
       })
     )
     .pipe(postcss([autoprefixer()]))

@@ -135,6 +135,7 @@ const buildSprites = (cb) => {
 // Compile, autoprefix & minify SASS files
 const buildStyles = () => {
   return src(config.styles.input)
+    .pipe(wait(500))
     .pipe(plumber())
     .pipe(gulpif(process.env.NODE_ENV === "development", sourcemaps.init()))
     .pipe(

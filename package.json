@@ -52,7 +52,8 @@
     "gulp-twig": "^1.2.0",
     "gulp-zip": "^5.1.0",
     "gulp.spritesmith": "^6.12.1",
-    "node-sass": "^6.0.1"
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6"
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",

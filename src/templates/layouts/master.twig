@@ -22,7 +22,8 @@
     {% include "../partials/header.twig" %}
     {% block content %}{% endblock %}
     {% include "../partials/footer.twig" %}
-    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"></script>')</script>
     {% block third_party_scripts %}{% endblock %}
     <script src="js/app.min.js"></script>
     {% block scripts %}{% endblock %}

@@ -13,12 +13,15 @@
   ],
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp",
+    "start": "cross-env NODE_ENV=development gulp",
     "clean": "gulp clean",
     "dev": "npm run clean && npm run start",
-    "build": "gulp build",
+    "build": "cross-env NODE_ENV=production gulp build",
     "sprites": "gulp sprites",
-    "archive": "npm run clean && npm run build && gulp archive"
+    "archive": "npm run clean && npm run build && gulp archive",
+    "preversion": "npm run clean",
+    "version": "npm run build",
+    "postversion": "gulp archive && git push && git push --tags"
   },
   "repository": {
     "type": "git",

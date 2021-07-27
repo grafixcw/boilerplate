@@ -21,6 +21,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const spritesmith = require("gulp.spritesmith");
 const terser = require("gulp-terser");
 const twig = require("gulp-twig");
+const wait = require("gulp-wait");
 const zip = require("gulp-zip");
 
 // File Banner

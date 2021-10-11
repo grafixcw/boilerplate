@@ -14,7 +14,7 @@ module.exports = {
     watch: "src/images/**/*",
   },
   scripts: {
-    copy: "node_modules/jquery/dist/jquery.min.js",
+    copy: "src/vendor/jquery/jquery.min.js",
     input: [
       "src/vendor/polyfills/object.assign.js",
       "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",

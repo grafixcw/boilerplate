@@ -32,10 +32,10 @@
     "url": "https://github.com/mavisland/boilerplate/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "autoprefixer": "^10.3.7",
-    "browser-sync": "^2.27.5",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "autoprefixer": "^10.4.0",
+    "browser-sync": "^2.27.7",
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -57,13 +57,13 @@
     "gulp-zip": "^5.1.0",
     "gulp.spritesmith": "^6.12.1",
     "node-sass": "^6.0.1",
-    "postcss": "^8.3.9"
+    "postcss": "^8.4.4"
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5.0.2",
-    "bootstrap-icons": "^1.5.0",
+    "@popperjs/core": "^2.11.0",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.7.1",
     "owl.carousel": "^2.3.4",
     "vov.css": "mavisland/vov.css"
   }
